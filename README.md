@@ -43,6 +43,20 @@ O PHP2Shell Guard permite verificar versões do PHP, aplicar um bloqueio tempor�
 
 A compatibilidade deve ser validada conforme a versão do Apache, a distribuição Linux e o modo de execução do PHP (`mod_php` ou PHP-FPM).
 
+## Comandos depois de instalado:
+
+```bash
+sudo php2shell-guard              # audita e mitiga automaticamente se detectar versão potencialmente afetada
+sudo php2shell-guard --check      # somente auditoria; não altera configuração
+sudo php2shell-guard --apply      # força a mitigação, mesmo sem indício detectado
+sudo php2shell-guard --status     # estado atual
+sudo php2shell-guard --rollback   # remove a mitigação e restaura o estado anterior
+```
+
+Relatórios são gravados em `/var/log/php2shell-guard/`. O estado necessário para rollback fica em `/var/lib/php2shell-guard/`.
+
+
+
 ## Instalação
 
 Baixe o pacote `.deb` e execute, no diretório onde o arquivo foi salvo:
